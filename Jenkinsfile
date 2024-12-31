@@ -10,13 +10,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Compiling code...'
-                bat 'g++ demo.cpp -o demo.exe'
+                sh 'g++ demo.cpp -o demo'  
             }
         }
         stage('Test') {
             steps {
                 echo 'Running the program...'
-                bat './demo.exe'
+                sh './demo' 
             }
         }
     }
